@@ -54,7 +54,7 @@ pipeline {
     
     stage('Sonarqube') {
     environment {
-        scannerHome = tool 'SonarQubeScanner'
+        scannerHome = tool 'SonarQubeScanner-Configured-GlobalToolConfig'
     }
     steps {
         withSonarQubeEnv('sonarqube') {
