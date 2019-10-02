@@ -58,7 +58,7 @@ pipeline {
     }
     steps {
         withSonarQubeEnv('MySonarQube') {
-            sh "${scannerHome}/bin/sonar-scanner"
+            sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=hipster -Dsonar.sources=."
         }
         timeout(time: 10, unit: 'MINUTES') {
             waitForQualityGate abortPipeline: true
